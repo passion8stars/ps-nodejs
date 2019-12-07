@@ -1,6 +1,6 @@
 const express = require('express')
+const path=require('path');
 const hbs = require('hbs');
-const path = require('path');
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -17,10 +17,9 @@ hbs.registerPartials(partialsPath)
 // Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
-
-
 app.get('/', (req, res) => {
-    res.send('<h1>Welcome to Passionate Stars</h1>')
+    //res.send('<h1>Welcome to Passionate Stars</h1>')
+    res.render('index',{})
 })
 app.get('*', (req, res) => {
     res.send('<h1>Welcome to Passionate Stars</h1><p>Sorry, requested page didn\'t found.')
