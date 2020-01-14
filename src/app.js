@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
     res.render('index',{})
 })
 app.get('*', (req, res) => {
-    res.send('<h1>Welcome to Passionate Stars</h1><p>Sorry, requested page didn\'t found.')
+    console.log(req.params)
+    //res.send('<h1>Welcome to Passionate Stars</h1>')
+    res.render('index',{})
 })
+// app.get('*', (req, res) => {
+//     res.send('<h1>Welcome to Passionate Stars</h1><p>Sorry, requested page didn\'t found.')
+// })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
